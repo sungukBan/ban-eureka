@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: eureka
+
+server:
+  port: 23001
+
+eureka:
+  instance:
+    prefer-ip-address: true # HostName이 IP에 의존하여 설정
+  client:
+    registerWithEureka: false # 자기자신을 서비스로 등록하지 않는다. true로 변경시 자기 자신에게 계속 health check를 하게 된다.
+    fetchRegistry: false #마이크로 서비스 인스턴스 목록을 로컬에 캐시할 것인지의 여부(레지스트리 정보를 로컬에 캐싱하지 않는다.)
+  server:
+    wait-time-in-ms-when-sync-empty: 0 # 레지스트리 정보를 가져오지 못할 경우 바로 재시도
